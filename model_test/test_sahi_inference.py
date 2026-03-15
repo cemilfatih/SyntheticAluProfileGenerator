@@ -6,16 +6,17 @@ import os
 import numpy as np
 
 # --- AYARLAR ---
-MODEL_PATH = "models/11_01_yolo11s_fast_finetune.pt" 
-CONF_THRESHOLD = 0.10          # Şimdilik 0.50 kalsın, skorları görüp artırırsın
+MODEL_PATH = "models/14_01_yolon11_1280_4profile.pt" 
+CONF_THRESHOLD = 0.1          # Şimdilik 0.50 kalsın, skorları görüp artırırsın
 SLICE_SIZE = 1280               
 OVERLAP_RATIO = 0.20           
-LINE_THICKNESS = 2             
+LINE_THICKNESS = 1             
 DRAW_TEXT = True               # EVET, artık skorları yazıyor
 MIN_PIXEL_SIZE = 10          # 10 pikselden küçük "leke" gibi kutuları çizme
 
-test_folder_path = "test_images/"
-out_folder_path = "out/output_images_10_01_yolo11s_fast_finetune/" # Klasör adını değiştirdim
+#test_folder_path = "test_images/"
+test_folder_path = "../val/1524_1560/valid/images/"
+out_folder_path = "out/output_14_01_yolon11_1280_4profile/" # Klasör adını değiştirdim
 
 def draw_boxes(image, prediction_result, output_path):
     if isinstance(image, str):
