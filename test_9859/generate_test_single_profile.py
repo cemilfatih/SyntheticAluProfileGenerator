@@ -6,7 +6,7 @@ import random
 import math
 
 # --- AYARLAR ---
-DXF_PROFILE = "cad_files/9859.dxf"
+DXF_PROFILE = "../cad_files/9859.dxf"
 OUTPUT_DIR = "single_dxf_test_out"
 RENDER_SIZE = 400
 
