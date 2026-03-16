@@ -25,6 +25,15 @@ SPECIAL_PAIRS_CONFIG = {
 
 # --- 1. DXF YÜKLEYİCİ ---
 class DXFProfileLoader:
+    def arc_to_points(self, entity, s=30):
+        c, r, start, end = entity.dxf.center, entity.dxf.radius, math.radians(entity.dxf.start_angle), math.radians(entity.dxf.end_angle)
+        if end < start: end += 2 * math.pi
+        return [[c.x + r * math.cos(a), c.y + r * math.sin(a)] for a in np.linspace(start, end, s)]
+
+    def circle_to_points(self, entity, s=60):
+        c, r = entity.dxf.center, entity.dxf.radius
+        return [[c.x + r * math.cos(a), c.y + r * math.sin(a)] for a in np.linspace(0, 2 * math.pi, s)]
+
     def __init__(self): self.profiles = {}
     
     def load_dxf(self, dxf_path, profile_name):
@@ -43,26 +52,58 @@ class DXFProfileLoader:
                     for i in range(len(pts)-1): G.add_edge(to_key(pts[i]), to_key(pts[i+1]))
                     if e.closed: G.add_edge(to_key(pts[-1]), to_key(pts[0]))
                     has_data=True
+                elif e.dxftype() == 'ARC':
+                    pts = self.arc_to_points(e)
+                    for i in range(len(pts)-1): G.add_edge(to_key(pts[i]), to_key(pts[i+1]))
+                    has_data=True
+                elif e.dxftype() == 'CIRCLE':
+                    pts = self.circle_to_points(e)
+                    for i in range(len(pts)-1): G.add_edge(to_key(pts[i]), to_key(pts[i+1]))
+                    G.add_edge(to_key(pts[-1]), to_key(pts[0]))
+                    has_data=True
             
             if not has_data: return None
             components = list(nx.connected_components(G))
-            largest_comp = max(components, key=len)
-            subgraph = G.subgraph(largest_comp)
-            ordered_nodes = list(nx.dfs_preorder_nodes(subgraph))
             
-            contour = self.create_closed_contour(ordered_nodes)
-            self.profiles[profile_name] = contour
-            return contour
+            main_comp = max(components, key=len)
+            main_pts = np.array(list(main_comp))
+            main_min, main_max = np.min(main_pts, axis=0), np.max(main_pts, axis=0)
+            
+            valid_comps = []
+            for comp in components:
+                if len(comp) < 3: continue
+                pts = np.array(list(comp))
+                c_min, c_max = np.min(pts, axis=0), np.max(pts, axis=0)
+                if comp == main_comp or (np.all(c_min >= main_min - 0.1) and np.all(c_max <= main_max + 0.1)):
+                    valid_comps.append(comp)
+
+            if not valid_comps: return None
+            
+            contours = []
+            all_pts = []
+            for comp in valid_comps:
+                subgraph = G.subgraph(comp)
+                start_node = next((n for n, d in subgraph.degree() if d == 1), list(comp)[0])
+                ordered_nodes = list(nx.dfs_preorder_nodes(subgraph, source=start_node))
+                contours.append(np.array(ordered_nodes))
+                all_pts.extend(ordered_nodes)
+                
+            all_pts = np.array(all_pts)
+            min_vals, max_vals = np.min(all_pts, axis=0), np.max(all_pts, axis=0)
+            center = (min_vals + max_vals) / 2
+            max_dim = np.max(max_vals - min_vals)
+            
+            normalized_contours = []
+            for pts in contours:
+                pts = pts - center
+                if max_dim > 0:
+                    pts = pts / max_dim
+                normalized_contours.append(pts)
+            
+            self.profiles[profile_name] = normalized_contours
+            return normalized_contours
         except Exception as e:
             print(f"DXF Hatası ({profile_name}): {e}"); return None
-
-    def create_closed_contour(self, points):
-        pts = np.array(points)
-        min_vals, max_vals = np.min(pts, axis=0), np.max(pts, axis=0)
-        center = (min_vals + max_vals) / 2
-        pts = pts - center
-        h = max_vals[1] - min_vals[1]
-        return pts / h if h > 0 else pts
 
 # --- 2. RENDER MOTORU ---
 class ProfileRenderer:
@@ -91,16 +132,18 @@ class ProfileRenderer:
         
         return cv2.merge((img_bgr, mask))
 
-    def get_single_half(self, contour, size, rotation=0):
+    def get_single_half(self, contours, size, rotation=0):
         canvas_size = int(size * 2.5)
-        scaled = contour * size + canvas_size // 2
-        if rotation != 0:
-            M = cv2.getRotationMatrix2D((canvas_size//2, canvas_size//2), rotation, 1.0)
-            ones = np.ones((len(scaled), 1))
-            scaled = M.dot(np.hstack([scaled, ones]).T).T
-        pts = scaled.astype(np.int32)
+        pts_list = []
+        for contour in contours:
+            scaled = contour * size + canvas_size // 2
+            if rotation != 0:
+                M = cv2.getRotationMatrix2D((canvas_size//2, canvas_size//2), rotation, 1.0)
+                ones = np.ones((len(scaled), 1))
+                scaled = M.dot(np.hstack([scaled, ones]).T).T
+            pts_list.append(scaled.astype(np.int32))
         mask = np.zeros((canvas_size, canvas_size), dtype=np.uint8)
-        cv2.fillPoly(mask, [pts], 255)
+        cv2.fillPoly(mask, pts_list, 255)
         mask = cv2.GaussianBlur(mask, (5, 5), 0)
         _, mask = cv2.threshold(mask, 127, 255, cv2.THRESH_BINARY)
         coords = cv2.findNonZero(mask)
@@ -110,16 +153,16 @@ class ProfileRenderer:
         thickness = int(w * 0.12)
         return self.apply_aluminum_texture(cropped_mask), thickness
 
-    def create_paired_block(self, contour, size, profile_name, target_rotation=0):
+    def create_paired_block(self, contours, size, profile_name, target_rotation=0):
         # --- ADIM 1: STANDART DİKEY MONTAJ (BOZULMAMASI İÇİN) ---
         # Her zaman rotasyon 0 ile üretip, en son çevireceğiz.
         
-        sprite_a, t = self.get_single_half(contour, size, 0)
+        sprite_a, t = self.get_single_half(contours, size, 0)
         if sprite_a is None: return np.zeros((10,10,4), dtype=np.uint8), (0,0,0,0)
         h, w = sprite_a.shape[:2]
         
         # Parça B (Tersi)
-        sprite_b_raw, _ = self.get_single_half(contour, size, 180)
+        sprite_b_raw, _ = self.get_single_half(contours, size, 180)
         sprite_b = cv2.resize(sprite_b_raw, (w, h))
         
         tightness = SPECIAL_PAIRS_CONFIG.get(profile_name, 1.0)
@@ -191,12 +234,12 @@ class ProfileRenderer:
             return canvas[y:y+h_crop, x:x+w_crop], (x, y, w_crop, h_crop)
         return canvas, (0,0,0,0)
 
-    def render_profile_sprite(self, contour, size, rotation=0, profile_name="default"):
+    def render_profile_sprite(self, contours, size, rotation=0, profile_name="default"):
         if profile_name in SPECIAL_PAIRS_CONFIG:
             # Pair modunda 'rotation' parametresi tüm bloğun dönüşünü belirler
-            return self.create_paired_block(contour, size, profile_name, target_rotation=rotation)
+            return self.create_paired_block(contours, size, profile_name, target_rotation=rotation)
         
-        sprite, t = self.get_single_half(contour, size, rotation)
+        sprite, t = self.get_single_half(contours, size, rotation)
         if sprite is None: return np.zeros((10,10,4), dtype=np.uint8), (0,0,0,0)
         return sprite, (0,0,sprite.shape[1], sprite.shape[0])
 
