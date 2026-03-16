@@ -104,7 +104,7 @@ class TestTuner:
             mask = cv2.bitwise_xor(mask, temp_mask)
             
         return mask
-        
+    
     def apply_aluminum_texture(self, mask):
         h, w = mask.shape
         img_bgr = np.zeros((h, w, 3), dtype=np.uint8)
