@@ -9,11 +9,11 @@ import shutil
 import networkx as nx
 
 # --- AYARLAR ---
-IMAGES_PER_CLASS_TRAIN = 2000  
-IMAGES_PER_CLASS_VAL = 50      
+IMAGES_PER_CLASS_TRAIN = 5  
+IMAGES_PER_CLASS_VAL = 1      
 IMG_WIDTH = 1280
 IMG_HEIGHT = 1280
-BASE_DIR = "datasets/4_profile_dataset_14_01" 
+BASE_DIR = "datasets/deneme" 
 BG_FOLDER = "background"
 DXF_FOLDER = "cad_files"
 FALSE_SAMPLES_DIR = "false_samples"

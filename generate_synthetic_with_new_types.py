@@ -9,10 +9,10 @@ import shutil
 import networkx as nx
 
 # --- AYARLAR ---
-IMAGE_COUNT = 300            
+IMAGE_COUNT = 5            
 IMG_WIDTH = 1280            
 IMG_HEIGHT = 1280           
-BASE_DIR = "new_test_dataset/dataset_v6"
+BASE_DIR = "datasets/deneme"
 BG_FOLDER = "background"
 DXF_FOLDER = "cad_files"
 FALSE_SAMPLES_DIR = "false_samples"

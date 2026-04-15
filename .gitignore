@@ -8,10 +8,13 @@ val
 false_samples
 
 
+*.zip
 
 *.jpeg
 *.jpg
 *.png
+*.heic
 *.onnx
 *.tflite
 *.pt
+*.txt

@@ -1,0 +1,10 @@
+path: /Users/cemilfatih/Desktop/GTU/Grad&Project/tests/synthetic_1/distributed_generator/dataset_5_profile_FINAL
+train: images/train
+val: images/val
+names:
+  0: '1524'
+  1: '1560'
+  2: '9859'
+  3: '7170'
+  4: '9794'
+nc: 5
