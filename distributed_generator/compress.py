@@ -40732,4 +40732,229 @@ Changes to be committed:
 	[32mdeleted:    model_test/test_sahi_inference.py[m
 	[32mmodified:   test_9859/.DS_Store[m
 
-[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004h
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hggit rm -r --cached .[?2004l
+error: the following files have staged content different from both the
+file and the HEAD:
+    .gitignore
+    distributed_generator/compress.py
+(use -f to force removal)
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hggit add .[?2004l
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hggit status[?2004l
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   .DS_Store[m
+	[32mmodified:   .gitignore[m
+	[32mdeleted:    background/IMG_0320.heic[m
+	[32mdeleted:    background/IMG_0324.heic[m
+	[32mdeleted:    background/IMG_0438.heic[m
+	[32mdeleted:    background/IMG_0440.heic[m
+	[32mdeleted:    background/IMG_0441.heic[m
+	[32mdeleted:    background/IMG_0465.heic[m
+	[32mdeleted:    background/IMG_0485.heic[m
+	[32mdeleted:    background/IMG_0486.heic[m
+	[32mdeleted:    background/ekstruzyon-2.jpg[m
+	[32mdeleted:    background/images-10.jpeg[m
+	[32mdeleted:    background/images-2.jpeg[m
+	[32mdeleted:    background/images-3.jpeg[m
+	[32mdeleted:    background/images-4.jpeg[m
+	[32mdeleted:    background/images-6.jpeg[m
+	[32mdeleted:    background/images-7.jpeg[m
+	[32mdeleted:    background/images-8.jpeg[m
+	[32mdeleted:    background/images-9.jpeg[m
+	[32mdeleted:    background/images.jpeg[m
+	[32mmodified:   cad_files/.DS_Store[m
+	[32mnew file:   claude_generate_5_profile.py[m
+	[32mnew file:   dfx_to_png.py[m
+	[32mnew file:   distributed_generator/.DS_Store[m
+	[32mnew file:   distributed_generator/compress.py[m
+	[32mnew file:   distributed_generator/create_yaml.py[m
+	[32mnew file:   distributed_generator/dataset_5_profile_FINAL/.DS_Store[m
+	[32mnew file:   distributed_generator/dataset_5_profile_FINAL/data.yaml[m
+	[32mnew file:   distributed_generator/dataset_5_profile_FINAL/images/.DS_Store[m
+	[32mnew file:   distributed_generator/dataset_5_profile_FINAL/labels/.DS_Store[m
+	[32mnew file:   distributed_generator/dataset_5_profile_FINAL_lite1280/.DS_Store[m
+	[32mnew file:   distributed_generator/dataset_5_profile_FINAL_lite1280/data.yaml[m
+	[32mnew file:   distributed_generator/dataset_5_profile_FINAL_lite1280/images/.DS_Store[m
+	[32mnew file:   distributed_generator/dataset_5_profile_FINAL_lite1280/labels/.DS_Store[m
+	[32mnew file:   distributed_generator/script_1524_1560.py[m
+	[32mnew file:   distributed_generator/script_7170_9794.py[m
+	[32mnew file:   distributed_generator/script_9859.py[m
+	[32mnew file:   distributed_generator/script_9859_fast.py[m
+	[32mdeleted:    false_samples/7170_141452-2.png[m
+	[32mdeleted:    false_samples/7170_141452-3.png[m
+	[32mdeleted:    false_samples/7170_141452-4.png[m
+	[32mdeleted:    false_samples/7170_141452.png[m
+	[32mdeleted:    false_samples/IMG_0297-2.png[m
+	[32mdeleted:    false_samples/IMG_0297-3.png[m
+	[32mdeleted:    false_samples/IMG_0297-4.png[m
+	[32mdeleted:    false_samples/IMG_0297-5.png[m
+	[32mdeleted:    false_samples/IMG_0297-6.png[m
+	[32mdeleted:    false_samples/IMG_0297-7.png[m
+	[32mdeleted:    false_samples/IMG_0297-8.png[m
+	[32mdeleted:    false_samples/IMG_0297-9.png[m
+	[32mdeleted:    false_samples/IMG_0297.png[m
+	[32mdeleted:    false_samples/IMG_0356-2.png[m
+	[32mdeleted:    false_samples/IMG_0356-3.png[m
+	[32mdeleted:    false_samples/IMG_0356-4.png[m
+	[32mdeleted:    false_samples/IMG_0356.png[m
+	[32mdeleted:    false_samples/IMG_0379.png[m
+	[32mdeleted:    false_samples/IMG_0397-2.png[m
+	[32mdeleted:    false_samples/IMG_0397.png[m
+	[32mdeleted:    false_samples/IMG_0496-2.png[m
+	[32mdeleted:    false_samples/IMG_0496-3.png[m
+	[32mdeleted:    false_samples/IMG_0496-4.png[m
+	[32mdeleted:    false_samples/IMG_0496-5.png[m
+	[32mdeleted:    false_samples/IMG_0496.png[m
+	[32mnew file:   gemini_generate_5_profile.py[m
+	[32mmodified:   generate_synthetic_5_profile.py[m
+	[32mnew file:   generate_synthetic_and_false.py[m
+	[32mmodified:   generate_synthetic_full.py[m
+	[32mmodified:   generate_synthetic_with_new_types.py[m
+	[32mdeleted:    model_test/test_sahi_inference.py[m
+	[32mmodified:   test_9859/.DS_Store[m
+
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hggit commt -  it -m "Removed t incorrex ctly tracked files"[?2004l
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+[main 1ad44df] Removed incorrectly tracked files
+ 70 files changed, 44248 insertions(+), 179 deletions(-)
+ delete mode 100644 background/IMG_0320.heic
+ delete mode 100644 background/IMG_0324.heic
+ delete mode 100644 background/IMG_0438.heic
+ delete mode 100644 background/IMG_0440.heic
+ delete mode 100644 background/IMG_0441.heic
+ delete mode 100644 background/IMG_0465.heic
+ delete mode 100644 background/IMG_0485.heic
+ delete mode 100644 background/IMG_0486.heic
+ delete mode 100644 background/ekstruzyon-2.jpg
+ delete mode 100644 background/images-10.jpeg
+ delete mode 100644 background/images-2.jpeg
+ delete mode 100644 background/images-3.jpeg
+ delete mode 100644 background/images-4.jpeg
+ delete mode 100644 background/images-6.jpeg
+ delete mode 100644 background/images-7.jpeg
+ delete mode 100644 background/images-8.jpeg
+ delete mode 100644 background/images-9.jpeg
+ delete mode 100644 background/images.jpeg
+ create mode 100644 claude_generate_5_profile.py
+ create mode 100644 dfx_to_png.py
+ create mode 100644 distributed_generator/.DS_Store
+ create mode 100644 distributed_generator/compress.py
+ create mode 100644 distributed_generator/create_yaml.py
+ create mode 100644 distributed_generator/dataset_5_profile_FINAL/.DS_Store
+ create mode 100644 distributed_generator/dataset_5_profile_FINAL/data.yaml
+ create mode 100644 distributed_generator/dataset_5_profile_FINAL/images/.DS_Store
+ create mode 100644 distributed_generator/dataset_5_profile_FINAL/labels/.DS_Store
+ create mode 100644 distributed_generator/dataset_5_profile_FINAL_lite1280/.DS_Store
+ create mode 100644 distributed_generator/dataset_5_profile_FINAL_lite1280/data.yaml
+ create mode 100644 distributed_generator/dataset_5_profile_FINAL_lite1280/images/.DS_Store
+ create mode 100644 distributed_generator/dataset_5_profile_FINAL_lite1280/labels/.DS_Store
+ create mode 100644 distributed_generator/script_1524_1560.py
+ create mode 100644 distributed_generator/script_7170_9794.py
+ create mode 100644 distributed_generator/script_9859.py
+ create mode 100644 distributed_generator/script_9859_fast.py
+ delete mode 100644 false_samples/7170_141452-2.png
+ delete mode 100644 false_samples/7170_141452-3.png
+ delete mode 100644 false_samples/7170_141452-4.png
+ delete mode 100644 false_samples/7170_141452.png
+ delete mode 100644 false_samples/IMG_0297-2.png
+ delete mode 100644 false_samples/IMG_0297-3.png
+ delete mode 100644 false_samples/IMG_0297-4.png
+ delete mode 100644 false_samples/IMG_0297-5.png
+ delete mode 100644 false_samples/IMG_0297-6.png
+ delete mode 100644 false_samples/IMG_0297-7.png
+ delete mode 100644 false_samples/IMG_0297-8.png
+ delete mode 100644 false_samples/IMG_0297-9.png
+ delete mode 100644 false_samples/IMG_0297.png
+ delete mode 100644 false_samples/IMG_0356-2.png
+ delete mode 100644 false_samples/IMG_0356-3.png
+ delete mode 100644 false_samples/IMG_0356-4.png
+ delete mode 100644 false_samples/IMG_0356.png
+ delete mode 100644 false_samples/IMG_0379.png
+ delete mode 100644 false_samples/IMG_0397-2.png
+ delete mode 100644 false_samples/IMG_0397.png
+ delete mode 100644 false_samples/IMG_0496-2.png
+ delete mode 100644 false_samples/IMG_0496-3.png
+ delete mode 100644 false_samples/IMG_0496-4.png
+ delete mode 100644 false_samples/IMG_0496-5.png
+ delete mode 100644 false_samples/IMG_0496.png
+ create mode 100644 gemini_generate_5_profile.py
+ create mode 100644 generate_synthetic_and_false.py
+ delete mode 100644 model_test/test_sahi_inference.py
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hggit git push origin main[?2004l
+git: 'git' is not a git command. See 'git --help'.
+
+The most similar command is
+	init
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hcclear[?2004l
+[3J[H[2J[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hggh s-  issue cere   reat[?2004l
+unknown command "creat" for "gh issue"
+
+Did you mean this?
+	create
+
+Usage:  gh issue <command> [flags]
+
+Available commands:
+  close
+  comment
+  create
+  delete
+  develop
+  edit
+  list
+  lock
+  pin
+  reopen
+  status
+  transfer
+  unlock
+  unpin
+  view
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hgh issue create e[?2004l
+
+Creating issue in cemilfatih/SyntheticAluProfileGenerator
+
+[0G[2K[0;1;92m? [0m[0;1;99mTitle [0m[?25l[?25l7[999;999f[6n8[?25h[6np[1D[0Kpoor pile genaration on certain types[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D
+[1B[0G[1A[?25h[0G[2K[0;1;92m? [0m[0;1;99mTitle [0m[0;36mpoor pile genaration on certain types[0m
+[0G[2K[0;1;92m? [0m[0;1;99mBody [0m[0;36m[(e) to launch nano, enter to skip] [0m[?25l[?25h[0G[2K[0;1;92m? [0m[0;1;99mBody [0m[0;36m<Received>[0m
+7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mWhat's next?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> Submit[0m
+[0;39m  Continue in browser[0m
+[0;39m  Add metadata[0m
+[0;39m  Cancel[0m
+7[1A[0G[1A[0G[1A[0G[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mWhat's next?[0m[0;36m Submit[0m
+https://github.com/cemilfatih/SyntheticAluProfileGenerator/issues/3
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hggit push origin main[?2004l
+Enumerating objects: 46, done.
+Counting objects:   2% (1/46)Counting objects:   4% (2/46)Counting objects:   6% (3/46)Counting objects:   8% (4/46)Counting objects:  10% (5/46)Counting objects:  13% (6/46)Counting objects:  15% (7/46)Counting objects:  17% (8/46)Counting objects:  19% (9/46)Counting objects:  21% (10/46)Counting objects:  23% (11/46)Counting objects:  26% (12/46)Counting objects:  28% (13/46)Counting objects:  30% (14/46)Counting objects:  32% (15/46)Counting objects:  34% (16/46)Counting objects:  36% (17/46)Counting objects:  39% (18/46)Counting objects:  41% (19/46)Counting objects:  43% (20/46)Counting objects:  45% (21/46)Counting objects:  47% (22/46)Counting objects:  50% (23/46)Counting objects:  52% (24/46)Counting objects:  54% (25/46)Counting objects:  56% (26/46)Counting objects:  58% (27/46)Counting objects:  60% (28/46)Counting objects:  63% (29/46)Counting objects:  65% (30/46)Counting objects:  67% (31/46)Counting objects:  69% (32/46)Counting objects:  71% (33/46)Counting objects:  73% (34/46)Counting objects:  76% (35/46)Counting objects:  78% (36/46)Counting objects:  80% (37/46)Counting objects:  82% (38/46)Counting objects:  84% (39/46)Counting objects:  86% (40/46)Counting objects:  89% (41/46)Counting objects:  91% (42/46)Counting objects:  93% (43/46)Counting objects:  95% (44/46)Counting objects:  97% (45/46)Counting objects: 100% (46/46)Counting objects: 100% (46/46), done.
+Delta compression using up to 8 threads
+Compressing objects:   3% (1/32)Compressing objects:   6% (2/32)Compressing objects:   9% (3/32)Compressing objects:  12% (4/32)Compressing objects:  15% (5/32)Compressing objects:  18% (6/32)Compressing objects:  21% (7/32)Compressing objects:  25% (8/32)Compressing objects:  28% (9/32)Compressing objects:  31% (10/32)Compressing objects:  34% (11/32)Compressing objects:  37% (12/32)Compressing objects:  40% (13/32)Compressing objects:  43% (14/32)Compressing objects:  46% (15/32)Compressing objects:  50% (16/32)Compressing objects:  53% (17/32)Compressing objects:  56% (18/32)Compressing objects:  59% (19/32)Compressing objects:  62% (20/32)Compressing objects:  65% (21/32)Compressing objects:  68% (22/32)Compressing objects:  71% (23/32)Compressing objects:  75% (24/32)Compressing objects:  78% (25/32)Compressing objects:  81% (26/32)Compressing objects:  84% (27/32)Compressing objects:  87% (28/32)Compressing objects:  90% (29/32)Compressing objects:  93% (30/32)Compressing objects:  96% (31/32)Compressing objects: 100% (32/32)Compressing objects: 100% (32/32), done.
+Writing objects:   2% (1/36)Writing objects:   5% (2/36)Writing objects:   8% (3/36)Writing objects:  11% (4/36)Writing objects:  13% (5/36)Writing objects:  16% (6/36)Writing objects:  19% (7/36)Writing objects:  22% (8/36)Writing objects:  25% (9/36)Writing objects:  27% (10/36)Writing objects:  30% (11/36)Writing objects:  33% (12/36)Writing objects:  36% (13/36)Writing objects:  38% (14/36)Writing objects:  41% (15/36)Writing objects:  44% (16/36)Writing objects:  50% (18/36)Writing objects:  52% (19/36)Writing objects:  55% (20/36)Writing objects:  58% (21/36)Writing objects:  61% (22/36)Writing objects:  63% (23/36)Writing objects:  66% (24/36)Writing objects:  69% (25/36)Writing objects:  72% (26/36)Writing objects:  77% (28/36)Writing objects:  80% (29/36)Writing objects:  83% (30/36)Writing objects:  86% (31/36)Writing objects:  88% (32/36)Writing objects:  91% (33/36)Writing objects:  94% (34/36)Writing objects:  97% (35/36)Writing objects: 100% (36/36)Writing objects: 100% (36/36), 161.14 KiB | 8.95 MiB/s, done.
+Total 36 (delta 18), reused 1 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas:   0% (0/18)[Kremote: Resolving deltas:   5% (1/18)[Kremote: Resolving deltas:  11% (2/18)[Kremote: Resolving deltas:  16% (3/18)[Kremote: Resolving deltas:  22% (4/18)[Kremote: Resolving deltas:  27% (5/18)[Kremote: Resolving deltas:  33% (6/18)[Kremote: Resolving deltas:  38% (7/18)[Kremote: Resolving deltas:  44% (8/18)[Kremote: Resolving deltas:  50% (9/18)[Kremote: Resolving deltas:  55% (10/18)[Kremote: Resolving deltas:  61% (11/18)[Kremote: Resolving deltas:  66% (12/18)[Kremote: Resolving deltas:  72% (13/18)[Kremote: Resolving deltas:  77% (14/18)[Kremote: Resolving deltas:  83% (15/18)[Kremote: Resolving deltas:  88% (16/18)[Kremote: Resolving deltas:  94% (17/18)[Kremote: Resolving deltas: 100% (18/18)[Kremote: Resolving deltas: 100% (18/18), completed with 8 local objects.[K
+To https://github.com/cemilfatih/SyntheticAluProfileGenerator.git
+   12708b9..1ad44df  main -> main
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hggh issue list[?2004l
+
+Showing 3 of 3 open issues in cemilfatih/SyntheticAluProfileGenerator
+
+[0;2;4;37mID[0m  [0;2;4;37mTITLE                                                  [0m  [0;2;4;37mLABELS[0m  [0;2;4;37mUPDATED               [0m
+[0;32m#3[0m  poor pile genaration on certain types                            [38;5;242mless than a minute ago[m
+[0;32m#2[0m  9859 pile generation code has issues with depth, shadow          [38;5;242mabout 1 month ago[m
+[0;32m#1[0m  new alu types must be added                                      [38;5;242mabout 1 month ago[m
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hggh issye   ue close 2[?2004l
+[0;31m✓[0m Closed issue #2 (9859 pile generation code has issues with depth, shadow )
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hgh issue close 2 3[?2004l
+[0;31m✓[0m Closed issue #3 (poor pile genaration on certain types)
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hgh issue close 3 1[?2004l
+[0;31m✓[0m Closed issue #1 (new alu types must be added)
+[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004hcclear[?2004l
+[3J[H[2J[1m[7m%[27m[1m[0m                                                                                                 [0m[27m[24m[J[36mcemilfatih[39m:~$[K[?2004h
